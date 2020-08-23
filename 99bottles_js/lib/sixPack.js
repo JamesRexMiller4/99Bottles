@@ -9,14 +9,12 @@ export class Bottles {
       '99 bottles of beer on the wall.\n';
       
     }
-    
-    let bottleVar = numBottles - 1 > 1 ? 'bottles' : 'bottle';
 
     if (numBottles >= 2) {
       return `${numBottles} bottles of beer on the wall, ` +
       `${numBottles}` + ' bottles of beer.\n' +
       'Take one down and pass it around, ' +
-      `${numBottles - 1}` + ` ${bottleVar} ` + 'of beer on the wall.\n';
+      `${numBottles - 1}` + ` ${this.container(numBottles - 1)} ` + 'of beer on the wall.\n';
     } else {
       return '1 bottle of beer on the wall, ' +
       '1 bottle of beer.\n' +
@@ -36,6 +34,12 @@ export class Bottles {
       }
     }
     return response;
+  }
+
+  container(number) {
+    if (number === 1) {
+      return 'bottle';
+    } else return 'bottles';
   }
 
   song() {
