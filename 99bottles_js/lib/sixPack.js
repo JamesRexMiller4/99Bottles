@@ -42,6 +42,18 @@ export class Bottles {
     } else return 'bottles';
   }
 
+  pronoun(number) {
+    if (number === 1) {
+      return 'it';
+    } else return 'one';
+  }
+
+  quantity(number) {
+    if (number === 0) {
+      return 'no more';
+    } else return number;
+  }
+
   song() {
     return this.verses(99, 0);
   }
