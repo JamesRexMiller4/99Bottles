@@ -1,17 +1,17 @@
-import { downTo } from './helpers';
+import { downTo, capitalize } from './helpers';
 
 export class Bottles {
   verse(numBottles) {
     if (numBottles === 0) {
-      return 'No more bottles of beer on the wall, ' +
-      'no more bottles of beer.\n' +
-      'Go to the store and buy some more, ' +
+      return `${capitalize(this.quantity(numBottles))} ${this.container(numBottles)} of beer on the wall, ` +
+      `${this.quantity(numBottles)} ${this.container(numBottles)} of beer.\n` +
+      `${this.action(numBottles)}` +
       '99 bottles of beer on the wall.\n';
       
     } else {
-      return `${numBottles} ${this.container(numBottles)} of beer on the wall, ` +
+      return `${capitalize(this.quantity(numBottles))} ${this.container(numBottles)} of beer on the wall, ` +
       `${numBottles} ${this.container(numBottles)} of beer.\n` +
-      `Take ${this.pronoun(numBottles)} down and pass it around, ` +
+      `${this.action(numBottles)}` +
       `${this.quantity(numBottles - 1)} ${this.container(numBottles - 1)} of beer on the wall.\n`;
     }
   }
@@ -44,7 +44,13 @@ export class Bottles {
   quantity(number) {
     if (number === 0) {
       return 'no more';
-    } else return number;
+    } else return number.toString();
+  }
+
+  action(number) {
+    if (number === 0) {
+      return 'Go to the store and buy some more, ';
+    } else return `Take ${this.pronoun(number)} down and pass it around, `;
   }
 
   song() {
