@@ -16,17 +16,10 @@ export class Bottles {
     }
   }
   
-  verses(val1, val2) {
-    let response;
-    for (let i = val1; i >= val2; i--) {
-      let verse = this.verse(i);
-      if (i === val1) {
-        response = verse;
-      } else {
-        response = response + '\n' + verse;
-      }
-    }
-    return response;
+  verses(starting, ending) {
+    return downTo(starting, ending)
+      .map(i => this.verse(i))
+      .join('\n');
   }
 
   container(number) {
