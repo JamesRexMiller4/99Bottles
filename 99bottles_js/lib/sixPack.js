@@ -68,9 +68,9 @@ class BottleNumber {
     } else return `Take ${this.pronoun()} down and pass it around, `;
   }
 
-  successor(number) {
-    if (number === 0) {
+  successor() {
+    if (this.number === 0) {
       return 99;
-    } else return number - 1;
+    } else return this.number - 1;
   }
 }
