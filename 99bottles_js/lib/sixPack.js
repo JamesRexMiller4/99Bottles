@@ -50,8 +50,8 @@ class BottleNumber {
     } else return 'bottles';
   }
 
-  pronoun(number) {
-    if (number === 1) {
+  pronoun() {
+    if (this.number === 1) {
       return 'it';
     } else return 'one';
   }
