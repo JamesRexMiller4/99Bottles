@@ -56,10 +56,10 @@ class BottleNumber {
     } else return 'one';
   }
 
-  quantity(number) {
-    if (number === 0) {
+  quantity() {
+    if (this.number === 0) {
       return 'no more';
-    } else return number.toString();
+    } else return this.number.toString();
   }
 
   action(number) {
