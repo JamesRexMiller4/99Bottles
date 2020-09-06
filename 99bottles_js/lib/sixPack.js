@@ -15,34 +15,23 @@ export class Bottles {
   }
 
   container(number) {
-    new BottleNumber(number).container(number);
-    if (number === 1) {
-      return 'bottle';
-    } else return 'bottles';
+    return new BottleNumber(number).container(number);
   }
 
   pronoun(number) {
-    if (number === 1) {
-      return 'it';
-    } else return 'one';
+    return new BottleNumber(number).pronoun(number);
   }
 
   quantity(number) {
-    if (number === 0) {
-      return 'no more';
-    } else return number.toString();
+    return new BottleNumber(number).quantity(number);
   }
 
   action(number) {
-    if (number === 0) {
-      return 'Go to the store and buy some more, ';
-    } else return `Take ${this.pronoun(number)} down and pass it around, `;
+    return new BottleNumber(number).action(number);
   }
 
   successor(number) {
-    if (number === 0) {
-      return 99;
-    } else return number - 1;
+    return new BottleNumber(number).successor(number);
   }
 
   song() {
