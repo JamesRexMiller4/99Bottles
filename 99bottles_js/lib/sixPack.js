@@ -15,23 +15,23 @@ export class Bottles {
   }
 
   container(number) {
-    return new BottleNumber(number).container(number);
+    return new BottleNumber(number).container();
   }
 
   pronoun(number) {
-    return new BottleNumber(number).pronoun(number);
+    return new BottleNumber(number).pronoun();
   }
 
   quantity(number) {
-    return new BottleNumber(number).quantity(number);
+    return new BottleNumber(number).quantity();
   }
 
   action(number) {
-    return new BottleNumber(number).action(number);
+    return new BottleNumber(number).action();
   }
 
   successor(number) {
-    return new BottleNumber(number).successor(number);
+    return new BottleNumber(number).successor();
   }
 
   song() {
