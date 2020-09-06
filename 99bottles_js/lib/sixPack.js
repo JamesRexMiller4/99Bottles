@@ -62,10 +62,10 @@ class BottleNumber {
     } else return this.number.toString();
   }
 
-  action(number) {
-    if (number === 0) {
+  action() {
+    if (this.number === 0) {
       return 'Go to the store and buy some more, ';
-    } else return `Take ${this.pronoun(number)} down and pass it around, `;
+    } else return `Take ${this.pronoun()} down and pass it around, `;
   }
 
   successor(number) {
