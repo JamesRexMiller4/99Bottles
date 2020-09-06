@@ -15,6 +15,7 @@ export class Bottles {
   }
 
   container(number) {
+    new BottleNumber(number).container(number);
     if (number === 1) {
       return 'bottle';
     } else return 'bottles';
@@ -46,5 +47,41 @@ export class Bottles {
 
   song() {
     return this.verses(99, 0);
+  }
+}
+
+class BottleNumber {
+  constructor(number) {
+    this.number = number;
+  }
+
+  container(number) {
+    if (number === 1) {
+      return 'bottle';
+    } else return 'bottles';
+  }
+
+  pronoun(number) {
+    if (number === 1) {
+      return 'it';
+    } else return 'one';
+  }
+
+  quantity(number) {
+    if (number === 0) {
+      return 'no more';
+    } else return number.toString();
+  }
+
+  action(number) {
+    if (number === 0) {
+      return 'Go to the store and buy some more, ';
+    } else return `Take ${this.pronoun(number)} down and pass it around, `;
+  }
+
+  successor(number) {
+    if (number === 0) {
+      return 99;
+    } else return number - 1;
   }
 }
