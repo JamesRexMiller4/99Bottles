@@ -44,8 +44,8 @@ class BottleNumber {
     this.number = number;
   }
 
-  container(number) {
-    if (number === 1) {
+  container() {
+    if (this.number === 1) {
       return 'bottle';
     } else return 'bottles';
   }
