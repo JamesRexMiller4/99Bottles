@@ -17,26 +17,6 @@ export class Bottles {
       .join('\n');
   }
 
-  container(number) {
-    return new BottleNumber(number).container();
-  }
-
-  pronoun(number) {
-    return new BottleNumber(number).pronoun();
-  }
-
-  quantity(number) {
-    return new BottleNumber(number).quantity();
-  }
-
-  action(number) {
-    return new BottleNumber(number).action();
-  }
-
-  successor(number) {
-    return new BottleNumber(number).successor();
-  }
-
   song() {
     return this.verses(99, 0);
   }
