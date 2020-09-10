@@ -2,10 +2,13 @@ import { downTo, capitalize } from './helpers';
 
 export class Bottles {
   verse(numBottles) {
-    return `${capitalize(this.quantity(numBottles))} ${this.container(numBottles)} of beer on the wall, ` +
-    `${this.quantity(numBottles)} ${this.container(numBottles)} of beer.\n` +
-    `${this.action(numBottles)}` +
-    `${this.quantity(this.successor(numBottles))} ${this.container(this.successor(numBottles))} of beer on the wall.\n`;
+    const bottleNumber = new BottleNumber(numBottles);
+    const nextBottleNumber = new BottleNumber(bottleNumber.successor());
+
+    return `${capitalize(bottleNumber.quantity())} ${bottleNumber.container()} of beer on the wall, ` +
+    `${bottleNumber.quantity()} ${bottleNumber.container()} of beer.\n` +
+    `${bottleNumber.action()}` +
+    `${nextBottleNumber.quantity()} ${nextBottleNumber.container()} of beer on the wall.\n`;
   }
   
   verses(starting, ending) {
