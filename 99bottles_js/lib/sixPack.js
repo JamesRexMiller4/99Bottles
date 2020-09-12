@@ -5,10 +5,12 @@ export class Bottles {
     const bottleNumber = new BottleNumber(numBottles);
     const nextBottleNumber = new BottleNumber(bottleNumber.successor());
 
-    return `${capitalize(bottleNumber.quantity())} ${bottleNumber.container()} of beer on the wall, ` +
-    `${bottleNumber.quantity()} ${bottleNumber.container()} of beer.\n` +
-    `${bottleNumber.action()}` +
-    `${nextBottleNumber.quantity()} ${nextBottleNumber.container()} of beer on the wall.\n`;
+    return (
+      capitalize(`${bottleNumber} of beer on the wall, `) +
+      `${bottleNumber} of beer.\n` +
+      `${bottleNumber.action()}`   +
+      `${nextBottleNumber} of beer on the wall.\n`
+    );
   }
   
   verses(starting, ending) {
@@ -55,5 +57,9 @@ class BottleNumber {
     if (this.number === 0) {
       return 99;
     } else return this.number - 1;
+  }
+
+  toString() {
+    return `${this.quantity()} ${this.container()}`;
   }
 }
