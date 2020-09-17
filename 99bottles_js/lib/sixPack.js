@@ -42,9 +42,7 @@ class BottleNumber {
   }
 
   quantity() {
-    if (this.number === 0) {
-      return 'no more';
-    } else return this.number.toString();
+    return this.number.toString();
   }
 
   action() {
@@ -61,5 +59,11 @@ class BottleNumber {
 
   toString() {
     return `${this.quantity()} ${this.container()}`;
+  }
+}
+
+class BottleNumber0 extends BottleNumber {
+  quantity() {
+    return 'no more';
   }
 }
