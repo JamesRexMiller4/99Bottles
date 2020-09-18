@@ -2,8 +2,8 @@ import { downTo, capitalize } from './helpers';
 
 export class Bottles {
   verse(numBottles) {
-    const bottleNumber = new BottleNumber(numBottles);
-    const nextBottleNumber = new BottleNumber(bottleNumber.successor());
+    const bottleNumber = this.bottleNumberFor(numBottles);
+    const nextBottleNumber = this.bottleNumberFor(bottleNumber.successor());
 
     return (
       capitalize(`${bottleNumber} of beer on the wall, `) +
@@ -21,6 +21,17 @@ export class Bottles {
 
   song() {
     return this.verses(99, 0);
+  }
+
+  bottleNumberFor(number) {
+    let bottleNumberClass;
+    if (number === 0) {
+      bottleNumberClass = BottleNumber0;
+    } else {
+      bottleNumberClass = BottleNumber;
+    }
+
+    return new bottleNumberClass(number);
   }
 }
 
