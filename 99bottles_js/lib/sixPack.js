@@ -25,12 +25,16 @@ export class Bottles {
 
   bottleNumberFor(number) {
     let bottleNumberClass;
-    if (number === 0) {
-      bottleNumberClass = BottleNumber0;
-    } else if (number === 1) {
-      bottleNumberClass = BottleNumber1;
-    } else {
-      bottleNumberClass = BottleNumber;
+    switch (number) {
+      case 0:
+        bottleNumberClass = BottleNumber0;
+        break;
+      case 1:
+        bottleNumberClass = BottleNumber1;
+        break;
+      default:
+        bottleNumberClass = BottleNumber;
+        break;
     }
 
     return new bottleNumberClass(number);
