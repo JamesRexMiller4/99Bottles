@@ -27,6 +27,8 @@ export class Bottles {
     let bottleNumberClass;
     if (number === 0) {
       bottleNumberClass = BottleNumber0;
+    } else if (number === 1) {
+      bottleNumberClass = BottleNumber1;
     } else {
       bottleNumberClass = BottleNumber;
     }
@@ -41,15 +43,11 @@ class BottleNumber {
   }
 
   container() {
-    if (this.number === 1) {
-      return 'bottle';
-    } else return 'bottles';
+    return 'bottles';
   }
 
   pronoun() {
-    if (this.number === 1) {
-      return 'it';
-    } else return 'one';
+    return 'one';
   }
 
   quantity() {
@@ -80,5 +78,15 @@ class BottleNumber0 extends BottleNumber {
 
   successor() {
     return 99;
+  }
+}
+
+class BottleNumber1 extends BottleNumber {
+  pronoun() {
+    return 'it';
+  }
+
+  container() {
+    return 'bottle';
   }
 }
