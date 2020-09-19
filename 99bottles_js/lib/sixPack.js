@@ -29,8 +29,6 @@ class BottleNumber {
   }
 
   static for(number) {
-    if (number instanceof BottleNumber) return number;
-
     let bottleNumberClass;
     switch (number) {
       case 0:
