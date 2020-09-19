@@ -3,13 +3,12 @@ import { downTo, capitalize } from './helpers';
 export class Bottles {
   verse(numBottles) {
     const bottleNumber = BottleNumber.for(numBottles);
-    const nextBottleNumber = bottleNumber.successor();
 
     return (
       capitalize(`${bottleNumber} of beer on the wall, `) +
       `${bottleNumber} of beer.\n` +
       `${bottleNumber.action()}`   +
-      `${nextBottleNumber} of beer on the wall.\n`
+      `${bottleNumber.successor()} of beer on the wall.\n`
     );
   }
   
