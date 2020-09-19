@@ -3,7 +3,7 @@ import { downTo, capitalize } from './helpers';
 export class Bottles {
   verse(numBottles) {
     const bottleNumber = BottleNumber.for(numBottles);
-    const nextBottleNumber = BottleNumber.for(bottleNumber.successor());
+    const nextBottleNumber = bottleNumber.successor();
 
     return (
       capitalize(`${bottleNumber} of beer on the wall, `) +
@@ -30,6 +30,8 @@ class BottleNumber {
   }
 
   static for(number) {
+    if (number instanceof BottleNumber) return number;
+
     let bottleNumberClass;
     switch (number) {
       case 0:
@@ -62,7 +64,7 @@ class BottleNumber {
   }
 
   successor() {
-    return this.number - 1;
+    return BottleNumber.for(this.number - 1);
   }
 
   toString() {
@@ -80,7 +82,7 @@ class BottleNumber0 extends BottleNumber {
   }
 
   successor() {
-    return 99;
+    return BottleNumber.for(99);
   }
 }
 
