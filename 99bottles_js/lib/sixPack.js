@@ -37,6 +37,9 @@ class BottleNumber {
       case 1:
         bottleNumberClass = BottleNumber1;
         break;
+      case 6:
+        bottleNumberClass = BottleNumber6;
+        break;
       default:
         bottleNumberClass = BottleNumber;
         break;
@@ -90,5 +93,15 @@ class BottleNumber1 extends BottleNumber {
 
   container() {
     return 'bottle';
+  }
+}
+
+class BottleNumber6 extends BottleNumber {
+  quantity() {
+    return '1';
+  }
+
+  container() {
+    return 'six-pack';
   }
 }
