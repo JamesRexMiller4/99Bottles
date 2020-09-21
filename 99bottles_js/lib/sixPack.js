@@ -29,22 +29,14 @@ class BottleNumber {
   }
 
   static for(number) {
-    let bottleNumberClass;
-    switch (number) {
-      case 0:
-        bottleNumberClass = BottleNumber0;
-        break;
-      case 1:
-        bottleNumberClass = BottleNumber1;
-        break;
-      case 6:
-        bottleNumberClass = BottleNumber6;
-        break;
-      default:
-        bottleNumberClass = BottleNumber;
-        break;
-    }
+    const bottleNumberClass = BottleNumber.registry.find(
+      candidate => candidate.canHandle(number)
+    );
     return new bottleNumberClass(number);
+  }
+
+  static register(candidate) {
+    BottleNumber.registry.unshift(candidate);
   }
 
   container() {
@@ -72,6 +64,8 @@ class BottleNumber {
   }
 }
 
+BottleNumber.registry = [BottleNumber];
+
 class BottleNumber0 extends BottleNumber {
   quantity() {
     return 'no more';
@@ -86,6 +80,7 @@ class BottleNumber0 extends BottleNumber {
   }
 }
 
+BottleNumber.register(BottleNumber0);
 class BottleNumber1 extends BottleNumber {
   pronoun() {
     return 'it';
@@ -96,6 +91,8 @@ class BottleNumber1 extends BottleNumber {
   }
 }
 
+BottleNumber.register(BottleNumber1);
+
 class BottleNumber6 extends BottleNumber {
   quantity() {
     return '1';
@@ -105,3 +102,5 @@ class BottleNumber6 extends BottleNumber {
     return 'six-pack';
   }
 }
+
+BottleNumber.register(BottleNumber6);
