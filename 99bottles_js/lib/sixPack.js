@@ -35,6 +35,10 @@ class BottleNumber {
     return new bottleNumberClass(number);
   }
 
+  static canHandle(number) {
+    return true;
+  }
+
   static register(candidate) {
     BottleNumber.registry.unshift(candidate);
   }
@@ -67,6 +71,10 @@ class BottleNumber {
 BottleNumber.registry = [BottleNumber];
 
 class BottleNumber0 extends BottleNumber {
+  static canHandle(number) {
+    return number === 0;
+  }
+
   quantity() {
     return 'no more';
   }
@@ -82,6 +90,10 @@ class BottleNumber0 extends BottleNumber {
 
 BottleNumber.register(BottleNumber0);
 class BottleNumber1 extends BottleNumber {
+  static canHandle(number) {
+    return number === 1;
+  }
+
   pronoun() {
     return 'it';
   }
@@ -94,6 +106,10 @@ class BottleNumber1 extends BottleNumber {
 BottleNumber.register(BottleNumber1);
 
 class BottleNumber6 extends BottleNumber {
+  static canHandle(number) {
+    return number === 6;
+  }
+
   quantity() {
     return '1';
   }
