@@ -1,4 +1,4 @@
-import { Bottles } from '../lib/sixPack';
+import { Bottles } from '../lib/other99';
 
 describe('Bottles', () => {
   test('the first verse', () => {
