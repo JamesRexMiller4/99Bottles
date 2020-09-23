@@ -1,8 +1,12 @@
 import { downTo, capitalize } from './helpers';
 
 export class Bottles {
+  constructor(verseTemplate = BottleVerse) {
+    this.verseTemplate = verseTemplate;
+  }
+
   verse(numBottles) {
-    return new BottleVerse(numBottles).lyrics();
+    return new this.verseTemplate(numBottles).lyrics();
   }
     
   verses(starting, ending) {
