@@ -2,7 +2,7 @@ import { downTo, capitalize } from './helpers';
 
 export class Bottles {
   verse(numBottles) {
-    return new BottleVerse(numBottles).verse(numBottles);
+    return new BottleVerse(numBottles).lyrics();
   }
     
   verses(starting, ending) {
@@ -119,8 +119,8 @@ class BottleVerse {
     this.number = number;
   }
 
-  verse(numBottles) {
-    const bottleNumber = BottleNumber.for(numBottles);
+  lyrics() {
+    const bottleNumber = BottleNumber.for(this.number);
 
     return (
       capitalize(`${bottleNumber} of beer on the wall, `) +
