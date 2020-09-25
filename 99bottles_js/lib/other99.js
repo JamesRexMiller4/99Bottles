@@ -119,22 +119,20 @@ class BottleNumber6 extends BottleNumber {
 BottleNumber.register(BottleNumber6);
 
 class BottleVerse {
-  constructor(number) {
-    this.number = number;
+  constructor(bottleNumber) {
+    this.bottleNumber = bottleNumber;
   }
 
   static lyrics(number) {
-    return new BottleVerse(number).lyrics();
+    return new BottleVerse(BottleNumber.for(number)).lyrics();
   }
 
   lyrics() {
-    const bottleNumber = BottleNumber.for(this.number);
-
     return (
-      capitalize(`${bottleNumber} of beer on the wall, `) +
-      `${bottleNumber} of beer.\n` +
-      `${bottleNumber.action()}`   +
-      `${bottleNumber.successor()} of beer on the wall.\n`
+      capitalize(`${this.bottleNumber} of beer on the wall, `) +
+      `${this.bottleNumber} of beer.\n` +
+      `${this.bottleNumber.action()}`   +
+      `${this.bottleNumber.successor()} of beer on the wall.\n`
     );
   }
 }
