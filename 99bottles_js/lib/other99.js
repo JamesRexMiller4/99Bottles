@@ -6,7 +6,7 @@ export class Bottles {
   }
 
   verse(numBottles) {
-    return new this.verseTemplate(numBottles).lyrics();
+    return this.verseTemplate.lyrics(numBottles);
   }
     
   verses(starting, ending) {
@@ -121,6 +121,10 @@ BottleNumber.register(BottleNumber6);
 class BottleVerse {
   constructor(number) {
     this.number = number;
+  }
+
+  static lyrics(number) {
+    return new BottleVerse(number).lyrics();
   }
 
   lyrics() {
