@@ -118,7 +118,7 @@ class BottleNumber6 extends BottleNumber {
   
 BottleNumber.register(BottleNumber6);
 
-class BottleVerse {
+export class BottleVerse {
   constructor(bottleNumber) {
     this.bottleNumber = bottleNumber;
   }
