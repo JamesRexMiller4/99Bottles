@@ -2,7 +2,7 @@ import { Bottles, BottleVerse } from '../lib/other99';
 
 describe('Bottles', () => {
   describe('BottleVerse', () => {
-    test('the first verse', () => {
+    test('verse general rule upper bound', () => {
       const expected =
         '99 bottles of beer on the wall, ' +
         '99 bottles of beer.\n' +
@@ -10,7 +10,7 @@ describe('Bottles', () => {
         '98 bottles of beer on the wall.\n';
       expect(BottleVerse.lyrics(99)).toBe(expected);
     });
-    test('another verse', () => {
+    test('verse general rule lower bound', () => {
       const expected =
         '3 bottles of beer on the wall, ' +
         '3 bottles of beer.\n' +
