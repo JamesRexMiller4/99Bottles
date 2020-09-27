@@ -1,6 +1,6 @@
 import { downTo, capitalize } from './helpers';
 
-export class Bottles {
+export class CountdownSong {
   constructor(verseTemplate = BottleVerse) {
     this.verseTemplate = verseTemplate;
   }
