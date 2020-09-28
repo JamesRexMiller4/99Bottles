@@ -1,5 +1,5 @@
 import { CountdownSong, BottleVerse } from '../lib/other99';
-
+import { testPlaysVerseRole } from './helpers';
 class VerseFake {
   static lyrics(number) {
     return `This is verse ${number}.\n`;
@@ -7,6 +7,10 @@ class VerseFake {
 }
 
 describe('CountdownSong', () => {
+  describe('VerseFake', () => {
+    testPlaysVerseRole(VerseFake);
+  });
+  
   test('verse', () => {
     const expected = 'This is verse 444.\n';
     expect(new CountdownSong(VerseFake).verse(444)).toBe(expected);
@@ -31,6 +35,8 @@ describe('CountdownSong', () => {
   });
 
   describe('BottleVerse', () => {
+    testPlaysVerseRole(BottleVerse);
+
     test('verse general rule upper bound', () => {
       const expected =
           '99 bottles of beer on the wall, ' +
