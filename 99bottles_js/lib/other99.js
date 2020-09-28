@@ -1,7 +1,7 @@
 import { downTo, capitalize } from './helpers';
 
 export class CountdownSong {
-  constructor(verseTemplate = BottleVerse, max = 99, min = 0) {
+  constructor(verseTemplate, max = 999999, min = 0) {
     this.verseTemplate = verseTemplate;
     this.max = max;
     this.min = min;
